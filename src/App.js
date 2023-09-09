@@ -1,4 +1,5 @@
-import MyComponent from "./MyComponent"; // TODO 이 부분 딥다이브에 나오니까 확인해보기
+import MyComponent from "./MyComponent";
+import Counter from "./Counter";
 
 // 3.2.3 모듈 내보내기 및 불러오기
 const App323 = () => {
@@ -7,13 +8,13 @@ const App323 = () => {
 };
 
 // 3.3.4 태그 사이의 내용을 보여주는 children
-const App = () => {
+const App334 = () => {
   return <MyComponent name="Test">리액트</MyComponent>;
 };
 
-// const App = () => {
-
-// }
-
+// 3.4.1 클래스형 컴포넌트의 state
+const App = () => {
+  return <Counter />;
+}
 
 export default App;
