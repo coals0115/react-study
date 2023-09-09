@@ -1,5 +1,6 @@
 import MyComponent from "./MyComponent";
 import Counter from "./Counter";
+import Say from './Say';
 
 // 3.2.3 모듈 내보내기 및 불러오기
 const App323 = () => {
@@ -13,8 +14,17 @@ const App334 = () => {
 };
 
 // 3.4.1 클래스형 컴포넌트의 state
-const App = () => {
+const App341 = () => {
   return <Counter />;
 }
+
+// 3.4.2.2 useState 사용하기
+const App = () => {
+  return <Say/>
+}
+
+
+
+
 
 export default App;
