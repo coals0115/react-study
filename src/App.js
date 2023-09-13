@@ -2,6 +2,7 @@ import { useState } from "react";
 import MyComponent from "./MyComponent";
 import Counter from "./Counter";
 import Say from './Say';
+import EventPractice from "./EventPractice";
 
 // 3.2.3 모듈 내보내기 및 불러오기
 const App323 = () => {
@@ -20,7 +21,7 @@ const App341 = () => {
 }
 
 // 3.4.2.2 useState 사용하기
-const App = () => {
+const App3422 = () => {
   return <Say/>
 }
 
@@ -53,5 +54,8 @@ const Test = () => {
   // => 리액트는 다 이런식으로 데이터를 변경한다.
 }
 
+const App = () => {
+  return <EventPractice />;
+}
 
 export default App;
