@@ -1,8 +1,72 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
+// 8.1
+const Info81 = () => {
+    const [name, setName] = useState('');
+    const [nickname, setNickname] = useState('');
+
+    const onChangeName = e => {
+        setName(e.target.value);
+    }
+
+    const onChangeNickname = e => {
+        setNickname(e.target.value);
+    }
+
+  return (
+    <div>
+      <div>
+        <input value={name} onChange={onChangeName} />
+        <input value={nickname} onChange={onChangeNickname} />
+      </div>
+      <div>
+        <div>
+          <b>이름:</b> {name}
+        </div>
+        <div>
+          <b>닉네임: </b> {nickname}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 8.2 useEffect = 렌더링될 때마다 수행될 작업 설정
 const Info = () => {
     const [name, setName] = useState('');
     const [nickname, setNickname] = useState('');
+
+    // useEffect(() => {
+    //     console.log('렌더링이 완료되었습니다!');
+    //     console.log({
+    //         name,
+    //         nickname
+    //     });
+    // });
+
+    // 8.2.1 마운트될 때만 실행하고 싶을 때
+    // useEffect(() => {
+    //     console.log('마운트될 때만 실행됩니다');
+    // }, []); // 빈 배열
+
+    // 8.2.2 특정 값이 업데이트될 때만 실행하고 싶을 때
+    // useEffect(() => {
+    //     console.log(name);
+    // }, [name]); // name이 update될 때마다 hook이 실행
+
+    // 8.2.3 뒷정리하기
+    // 언마운트 or 업데이트되기 직전에 어떤 작업 수행하고 싶을 때 뒷정리 함수 반환해 주어야 한다.
+    useEffect(() => {
+        console.log('effect');
+        console.log(name);
+
+        return () => { // 뒷정리 함수
+            console.log('cleanup');
+            console.log(name);
+        };
+    });
+
+
 
     const onChangeName = e => {
         setName(e.target.value);
