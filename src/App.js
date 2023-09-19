@@ -1,12 +1,12 @@
-import { Component } from "react";
-import IterationSample from "./06/IterationSample";
+import Counter from "./08/Counter";
+import Info from "./08/Info";
 
-class App extends Component {
-  render() {
-    return (
-      <IterationSample />
-    );
-  }
+const App810 = () => {
+  return <Counter/>;
+};
+
+const App = () => {
+  return <Info />;
 }
 
 export default App;
