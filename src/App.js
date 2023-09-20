@@ -1,12 +1,7 @@
-import Counter from "./08/Counter";
-import Info from "./08/Info";
-
-const App810 = () => {
-  return <Counter/>;
-};
+import Average from "./08/Average";
 
 const App = () => {
-  return <Info />;
+  return <Average />;
 }
 
 export default App;
