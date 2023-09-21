@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 const getAverage = numbers => {
   console.log('평균값 계산중..');
@@ -10,6 +10,8 @@ const getAverage = numbers => {
 const Average = () => {
   const [list, setList] = useState([]);
   const [number, setNumber] = useState('');
+  // 자스에서 jsx에 접근할 방법이 없기 때문에 ref 사용
+  const inputEl = useRef(null); // p.148 createRef랑 같다.
 
 //   const onChange = e => { // 리렌더링 할 때마다 람다식이 새로 만들어진다. 이런 비효율을 없애려고 만든 게 useCallback
 //     setNumber(e.target.value);
@@ -37,7 +39,7 @@ const Average = () => {
 
   return (
     <div>
-      <input value={number} onChange={onChange} />
+      <input value={number} onChange={onChange} ref={inputEl} /> // input 태그 직접 건드릴 때 씀
       <button onClick={onInsert}>등록</button>
       <ul>
         {list.map((value, index) => (
